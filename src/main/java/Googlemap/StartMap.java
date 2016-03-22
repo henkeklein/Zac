@@ -17,15 +17,15 @@ import java.net.URLEncoder;
  */
 public class StartMap {
     public void startGoogle(String bean){
-    String title = bean;
+    String cityName = bean;
     try {
-        title = URLEncoder.encode(title, "UTF-8");
+        cityName = URLEncoder.encode(cityName, "UTF-8");
     } catch (UnsupportedEncodingException e) {
     } catch (NullPointerException e) {
         System.out.println("Ingen låt spelas just nu");
     }
 
-    String baseUrl = "https://api.spotify.com/v1/search?query=" + title + "&offset=0&limit=20&type=track";
+    String baseUrl = "http://maps.google.com/maps/api/geocode/json?address=" + cityName;
 
     HttpClient httpclient = null;
     HttpGet httpGet = null;
@@ -38,7 +38,7 @@ public class StartMap {
     GsonBuilder builder = new GsonBuilder();
     Gson json = builder.create();
 
-    ResultBean envelope = null;
+    FinalBean envelope = null;
 
     try {
         httpclient = HttpClients.createDefault();
@@ -52,7 +52,7 @@ public class StartMap {
             try {
                 reader = new InputStreamReader(data);
                 json = builder.create();
-                envelope = json.fromJson(reader, ResultBean.class);
+                envelope = json.fromJson(reader, FinalBean.class);
 
 
             } catch (Exception e) {
