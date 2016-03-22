@@ -1,7 +1,9 @@
 package Start;
 
-import Googlemap.ResultBean;
+import Googlemap.FinalBean;
 import Googlemap.StartMap;
+
+import java.util.ArrayList;
 
 /**
  * Created by Henke on 2016-03-22.
@@ -9,9 +11,7 @@ import Googlemap.StartMap;
 public class CreateJson {
 
     //defines the full description of song
-    private String description;
-    //defines the songs url
-    private String url;
+    private ArrayList<FinalBean> description;
 
     /**
      * Sets the values of description and url.
@@ -24,8 +24,12 @@ public class CreateJson {
         System.out.println(cityName);
         StartMap map = new StartMap();
         map.startGoogle(cityName);
-        ResultBean bean = new ResultBean();
+        FinalBean bean = new FinalBean();
 
+        description = bean.getResultList();
+    }
 
+    public ArrayList setDesc(){
+        return description;
     }
 }

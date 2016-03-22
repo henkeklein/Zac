@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class FinalBean implements Serializable{
 
+    private AddressBean addressBean;
+    private String link;
     @SerializedName("\"results\"")
     private ArrayList<ResultBean> list = new ArrayList<>();
 
@@ -19,6 +21,12 @@ public class FinalBean implements Serializable{
 
     public ArrayList getResultList(){
         return list;
+    }
+
+    public String printName(){
+        link = addressBean.getCityName();
+        System.out.println(link);
+        return link;
     }
 
 }

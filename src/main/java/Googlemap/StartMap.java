@@ -25,7 +25,7 @@ public class StartMap {
         cityName = URLEncoder.encode(cityName, "UTF-8");
     } catch (UnsupportedEncodingException e) {
     } catch (NullPointerException e) {
-        System.out.println("Ingen låt spelas just nu");
+        System.out.println("Ingen karta hittas");
     }
 
     String baseUrl = "http://maps.google.com/maps/api/geocode/json?address=" + cityName;
