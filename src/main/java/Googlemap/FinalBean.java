@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class FinalBean implements Serializable{
 
-    @SerializedName(""results"")
+    @SerializedName("\"results\"")
     private ArrayList<ResultBean> list = new ArrayList<>();
 
     public FinalBean (){

@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class AddressBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @SerializedName(""long_name"")
+    @SerializedName("\"long_name\"")
     private String cityName;
 
     public AddressBean(){

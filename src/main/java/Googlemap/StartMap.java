@@ -16,6 +16,9 @@ import java.net.URLEncoder;
  * Created by Henke on 2016-03-11.
  */
 public class StartMap {
+    public StartMap(){
+
+    }
     public void startGoogle(String bean){
     String cityName = bean;
     try {

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class ResultBean implements Serializable{
 
-    @SerializedName(""address_components"")
+    @SerializedName("\"address_components\"")
     private ArrayList<AddressBean> list = new ArrayList<>();
 
     public ResultBean (){
